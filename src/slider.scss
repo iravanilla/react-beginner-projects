@@ -1,0 +1,87 @@
+.StyledSliderContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    @media (max-width: 768px) {
+        overflow-y: auto;
+    }
+
+    &__content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s linear;
+    }
+}
+
+.Styled__page {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.StyledCarousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    &__content {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 350px;
+        position: relative;
+        top: 20%;
+
+        @media (max-width: 1024px) {
+            height: 270px;
+        }
+
+        @media (max-width: 1024px) {
+            height: 240px;
+        }
+    }
+
+    &__slide {
+        flex: 0 0 100%;
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        &.active {
+            opacity: 1;
+            position: absolute;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 80%;
+        font-size: 64px;
+        font-weight: bold;
+        color: #764BA2;
+        cursor: pointer;
+
+        &-left {
+            left: 5%;
+        }
+
+        &-right {
+            right: 70%;
+
+            @media (max-width: 1024px) {
+                right: 65%;
+            }
+        }
+    }
+}
