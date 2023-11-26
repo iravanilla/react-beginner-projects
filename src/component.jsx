@@ -40,8 +40,10 @@ function reducer(state, action) {
                 class_arrow: 'StyledArrow-3',
             };
         }
+        default: {
+            return state;
+        }
     }
-    throw Error('Unknown action: ' + action.type);
 }
 
 const images = [
